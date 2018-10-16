@@ -13,7 +13,9 @@ public class DrawLine2 : MonoBehaviour
     public Transform origin;
     public Transform destination;
 
-    public float linewidth = 0.45f;
+    public float linewidthstart = 0.45f;
+    public float linewidthend = 0.45f;
+
 
 
     public float lineDrawSpeed = 6f;
@@ -25,7 +27,8 @@ public class DrawLine2 : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
         //0 is for first position of the line and then feed into a vector. Origin is a transform
         lineRenderer.SetPosition(0, origin.position);
-        lineRenderer.startWidth = lineRenderer.endWidth = linewidth;
+        lineRenderer.startWidth = linewidthstart;
+        lineRenderer.endWidth = linewidthend;
 
         dist = Vector3.Distance(origin.position, destination.position);
 
